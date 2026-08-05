@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ultimate Player — Support</title>
+<meta name="description" content="Support, setup guides and troubleshooting for Ultimate Player, the media player for your own servers and network shares.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <h1>Ultimate Player</h1>
+    <p class="tagline">Play the media you already own — from your own servers, shares and device.</p>
+    <nav class="site">
+      <a href="support.html" aria-current="page">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="../">All platforms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="lede">Ultimate Player connects to media you already have. It ships no content of its own — you
+  point it at a network share or media server, and it builds a browsable library with artwork, subtitles
+  and resume positions.</p>
+
+  <h2>Getting started</h2>
+
+  <p>On first launch the app shows a sample library so you can look around. Those titles are placeholders —
+  they disappear as soon as you add a real source.</p>
+
+  <ol>
+    <li>Open <strong>Settings</strong> → <strong>Add Movies/TV Shows</strong>.</li>
+    <li>Pick the kind of source you want to connect (see the list below).</li>
+    <li>Enter the host address, and a username and password if the source needs one.</li>
+    <li>Save. The app scans the source and builds your library — usually a few seconds, longer for very
+      large collections.</li>
+  </ol>
+
+  <p>Ultimate Player looks for servers on your local network automatically. The first time it does this iOS
+  asks for permission to find devices on your network — if you decline, you can still add a server by typing
+  its address by hand, or re-enable it later in <strong>iOS Settings → Ultimate Player → Local Network</strong>.</p>
+
+  <h2>What you can connect</h2>
+
+  <div class="card">
+    <h3>Network shares</h3>
+    <p><strong>SMB</strong> (Windows shares, NAS boxes, macOS file sharing) · <strong>FTP</strong> ·
+      <strong>WebDAV</strong></p>
+  </div>
+
+  <div class="card">
+    <h3>Media servers</h3>
+    <p><strong>Jellyfin</strong> · <strong>Plex</strong> — libraries, artwork and watch state come from the
+      server, and playback progress is reported back to it.</p>
+  </div>
+
+  <div class="card">
+    <h3>On this device</h3>
+    <p>Files already on your iPhone or iPad, including anything you have downloaded in the app for offline
+      viewing, or imported through the Files app.</p>
+  </div>
+
+  <h2>Troubleshooting</h2>
+
+  <h3>My server does not appear when I scan</h3>
+  <ul>
+    <li>Confirm the device and the server are on the same network. A VPN on either end will usually break
+      discovery — try turning it off.</li>
+    <li>Check that local network permission is granted: <strong>iOS Settings → Ultimate Player → Local
+      Network</strong>.</li>
+    <li>Automatic discovery is a convenience, not a requirement. Add the server manually with its IP address
+      and port instead — that path does not depend on discovery working.</li>
+  </ul>
+
+  <h3>The share connects but no videos show up</h3>
+  <ul>
+    <li>Check the account you signed in with can actually read that folder.</li>
+    <li>Point the app at the folder that holds the media, rather than the very top of a large drive — a scan
+      that has to walk an entire disk takes a long time.</li>
+    <li>Pull down on the Home screen to rescan.</li>
+  </ul>
+
+  <h3>A video will not play, or plays with no picture</h3>
+  <ul>
+    <li>Ultimate Player plays a wide range of formats, but a few exotic codecs are not supported on iOS. The
+      player says so explicitly when it hits one.</li>
+    <li>Very high-bitrate files over Wi-Fi can stall. Try a wired server, move closer to the router, or
+      download the file for offline playback first.</li>
+    <li>If playback stops partway through, the connection to the server most likely dropped — the player
+      shows a Retry action.</li>
+  </ul>
+
+  <h3>Subtitles are missing or out of sync</h3>
+  <ul>
+    <li>Subtitle files sitting next to the video are picked up automatically. You can also search for
+      subtitles from within the player.</li>
+    <li>If a subtitle track runs ahead or behind, adjust the delay in the player's subtitle settings.</li>
+    <li>Size, colour and background are in <strong>Settings → Playback</strong>.</li>
+  </ul>
+
+  <h3>Downloads</h3>
+  <ul>
+    <li>Downloads continue while the app is in the background. Manage them in <strong>Settings →
+      Downloads</strong>, where you can pause, resume, retry or delete.</li>
+    <li>Downloads are Wi-Fi only by default. To allow cellular, turn on <strong>Cellular Sync &amp;
+      Download</strong> in <strong>Settings → General</strong>.</li>
+    <li>That same screen shows how much storage downloads are using, with an option to clear them all.</li>
+  </ul>
+
+  <h2>Get in touch</h2>
+
+  <div class="card">
+    <p>Questions, bug reports and feature requests are all welcome. Email
+      <a href="mailto:vnikie1@gmail.com">vnikie1@gmail.com</a>.</p>
+    <p>To help sort a problem out quickly, it is worth including your device model and iOS version, the app
+      version from <strong>Settings → About &amp; Legal</strong>, the kind of server you are connecting to,
+      and what you expected to happen.</p>
+  </div>
+
+  <h2>Privacy in one line</h2>
+
+  <p>Ultimate Player has no account system, no analytics and no advertising, and the developer operates no
+  server that receives your data. The full detail is in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><a href="support.html">Support</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
+    <p>Ultimate Player is not affiliated with Jellyfin, Plex, TMDB, OMDb, OpenSubtitles or SubDL.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -3,154 +3,62 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ultimate Player — Privacy Policy</title>
-<style>
-  :root {
-    --bg: #ffffff; --fg: #1a1a1e; --muted: #5b5b66; --card: #f6f6f8;
-    --border: #e4e4ea; --accent: #4f46e5; --accent-fg: #ffffff;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0f0f12; --fg: #ececf1; --muted: #a0a0ad; --card: #1a1a20;
-      --border: #2a2a33; --accent: #8b83ff; --accent-fg: #0f0f12;
-    }
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0; background: var(--bg); color: var(--fg);
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 22px 80px; }
-  header { border-bottom: 1px solid var(--border); padding-bottom: 22px; margin-bottom: 8px; }
-  h1 { font-size: 1.9rem; margin: 0 0 6px; letter-spacing: -0.02em; }
-  h2 { font-size: 1.2rem; margin: 34px 0 10px; letter-spacing: -0.01em; }
-  h3 { font-size: 1.02rem; margin: 22px 0 6px; }
-  p, li { color: var(--fg); }
-  .lede { color: var(--muted); font-size: 1.05rem; }
-  .meta { color: var(--muted); font-size: 0.9rem; margin-top: 10px; }
-  a { color: var(--accent); }
-  ul { padding-left: 22px; }
-  li { margin: 6px 0; }
-  .callout {
-    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-    padding: 16px 18px; margin: 18px 0;
-  }
-  .callout strong { color: var(--fg); }
-  code { background: var(--card); border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px; font-size: 0.88em; }
-  footer { margin-top: 50px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
-  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.95rem; }
-  th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { color: var(--muted); font-weight: 600; }
-</style>
+<title>Ultimate Player — Support &amp; Legal</title>
+<meta name="description" content="Support, privacy policy and terms for Ultimate Player on iOS, iPadOS, Apple TV and Android.">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>Privacy Policy — Ultimate Player</h1>
-    <p class="lede">Ultimate Player is a media player for content you already own — files on your
-      network shares, local storage, and your own media servers. It is built to keep your data on
-      your device.</p>
-    <p class="meta">Last updated: 20 July 2026</p>
-  </header>
 
-  <div class="callout">
-    <strong>The short version:</strong> Ultimate Player has no user accounts, no advertising, no
-    analytics, and no crash-reporting or tracking SDKs. We (the developer) do not collect, receive,
-    store, or sell any of your personal information. Your settings, playback history, downloads, and
-    the credentials for your media servers stay on your device.
+<header class="site">
+  <div class="wrap">
+    <h1>Ultimate Player</h1>
+    <p class="tagline">Play the media you already own — from your own servers, shares and device.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="lede">Support and legal pages for Ultimate Player. Pick your platform.</p>
+
+  <h2>iOS, iPadOS &amp; Apple TV</h2>
+
+  <div class="card">
+    <h3><a href="ios/support.html">Support &amp; setup guide</a></h3>
+    <p>Connecting a source, supported servers and formats, troubleshooting, and how to get in touch.</p>
   </div>
 
-  <h2>1. Who this policy covers</h2>
-  <p>This policy applies to the <strong>Ultimate Player</strong> Android application (the “App”),
-    published on Google Play. It explains what data the App handles, where that data goes, and the
-    permissions the App requests.</p>
+  <div class="card">
+    <h3><a href="ios/privacy.html">Privacy Policy</a></h3>
+    <p>What the app stores on your device, which third-party services it contacts, and what it never
+      collects.</p>
+  </div>
 
-  <h2>2. Information we collect</h2>
-  <p><strong>We do not collect any personal data.</strong> The App has no sign-in, no user profile,
-    and no server operated by the developer. There is no analytics, advertising, or telemetry in the
-    App. We have no way to see how you use the App or what media you play.</p>
+  <div class="card">
+    <h3><a href="ios/terms.html">Terms of Use</a></h3>
+    <p>Licence, your responsibilities, and the usual disclaimers.</p>
+  </div>
 
-  <h2>3. Data stored on your device</h2>
-  <p>To function, the App stores the following <em>locally on your device only</em>. This information
-    is never transmitted to the developer:</p>
-  <ul>
-    <li><strong>Media source configuration and credentials</strong> — the addresses, usernames,
-      passwords, and access tokens you enter for your own media sources (for example SMB/network
-      shares, WebDAV, Plex, Jellyfin, DLNA/UPnP renderers, and direct URLs). These are stored on the
-      device so the App can reconnect to your sources.</li>
-    <li><strong>Library and playback data</strong> — the list of media the App has scanned from your
-      sources, watch/unwatched status, and playback progress, so you can resume where you left off.</li>
-    <li><strong>Downloads</strong> — media you choose to download for offline playback, saved in the
-      App’s storage.</li>
-    <li><strong>Preferences</strong> — your in-app settings (theme, playback options, and similar).</li>
-  </ul>
-  <p>This data is removed when you uninstall the App or clear its storage.</p>
+  <h2>Android</h2>
 
-  <h2>4. Connections to your own media servers</h2>
-  <p>When you add a media source, the App connects <strong>directly from your device to the server
-    you specified</strong> (for example a computer on your home network, or your own Plex/Jellyfin
-    server). Your credentials and media travel between your device and your server only. The developer
-    is not a party to, and has no access to, these connections.</p>
+  <div class="card">
+    <h3><a href="android-privacy.html">Privacy Policy</a></h3>
+    <p>The privacy policy for the Ultimate Player Android app on Google Play.</p>
+  </div>
 
-  <h2>5. Third-party services</h2>
-  <p>The App can fetch cover artwork and descriptive metadata (posters, titles, summaries) to make
-    your library look nicer. When these features are used, the App sends the <strong>title text of a
-    movie or show</strong> (not your identity) to the following services and receives images/metadata
-    in return:</p>
-  <table>
-    <tr><th>Service</th><th>What is sent</th><th>Privacy policy</th></tr>
-    <tr>
-      <td>The Movie Database (TMDB)</td>
-      <td>Movie/show title queries</td>
-      <td><a href="https://www.themoviedb.org/privacy-policy" rel="noopener">themoviedb.org/privacy-policy</a></td>
-    </tr>
-    <tr>
-      <td>Apple iTunes Search API</td>
-      <td>Movie/show title queries</td>
-      <td><a href="https://www.apple.com/legal/privacy/" rel="noopener">apple.com/legal/privacy</a></td>
-    </tr>
-  </table>
-  <p>These requests contain only the search terms needed to find artwork. They do not include your
-    name, account, device identifiers, or the contents of your media.</p>
-  <p class="meta">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+  <h2>Contact</h2>
 
-  <h2>6. Permissions the App requests</h2>
-  <table>
-    <tr><th>Permission</th><th>Why it is used</th></tr>
-    <tr><td>Read media / video (and legacy storage on older Android)</td>
-      <td>To list and play video files stored on your device (e.g. your Downloads folder or a local folder you pick).</td></tr>
-    <tr><td>Internet &amp; network/Wi-Fi state</td>
-      <td>To connect to your media servers and to fetch artwork/metadata; to detect network availability.</td></tr>
-    <tr><td>Change Wi-Fi multicast state</td>
-      <td>To discover DLNA/UPnP devices (“Cast to TV”) on your local network.</td></tr>
-  </table>
+  <div class="card">
+    <p>For anything at all — questions, bug reports, feature requests — email
+      <a href="mailto:vnikie1@gmail.com">vnikie1@gmail.com</a>.</p>
+  </div>
 
-  <h2>7. Data sharing and selling</h2>
-  <p>We do not sell, rent, or share personal information — because we do not collect any. The only
-    data leaving your device is (a) traffic to media servers you configure, and (b) the artwork title
-    queries described in Section 5.</p>
+</main>
 
-  <h2>8. Data security</h2>
-  <p>Data the App stores — including media-server credentials — is kept in the App’s private storage
-    on your device and is protected by your device’s own security (screen lock, encryption). Please
-    keep your device secure. Uninstalling the App or clearing its data removes this information.</p>
+<footer class="site">
+  <div class="wrap">
+    <p>Ultimate Player is not affiliated with Jellyfin, Plex, TMDB, OMDb, OpenSubtitles or SubDL.</p>
+  </div>
+</footer>
 
-  <h2>9. Children’s privacy</h2>
-  <p>The App is not directed at children under 13 and does not knowingly collect information from
-    children.</p>
-
-  <h2>10. Changes to this policy</h2>
-  <p>We may update this policy as the App evolves. Material changes will be reflected here with an
-    updated “Last updated” date.</p>
-
-  <h2>11. Contact</h2>
-  <p>Questions about this policy or the App? Contact the developer at
-    <a href="mailto:vnikie1@gmail.com">vnikie1@gmail.com</a>.</p>
-
-  <footer>
-    Ultimate Player · Developer: unikie1 · This page is hosted for the App’s Google Play listing.
-  </footer>
-</div>
 </body>
 </html>

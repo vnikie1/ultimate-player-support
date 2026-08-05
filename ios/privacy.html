@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ultimate Player — Privacy Policy</title>
+<meta name="description" content="Privacy Policy for Ultimate Player: no account, no analytics, no advertising, and no developer-operated server that receives your data.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <h1>Privacy Policy</h1>
+    <p class="tagline">Ultimate Player for iPhone, iPad and Apple TV</p>
+    <nav class="site">
+      <a href="support.html">Support</a>
+      <a href="privacy.html" aria-current="page">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="../">All platforms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="updated">Last updated: 5 August 2026</p>
+
+  <p class="lede">Ultimate Player has no account system, no analytics, no advertising and no
+  developer-operated server. Your library, your credentials and your viewing history stay on your device.</p>
+
+  <h2>At a glance</h2>
+
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Does Ultimate Player…</th><th>Answer</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Require an account or sign-up?</td><td class="no">No</td></tr>
+        <tr><td>Send your library, viewing history or files to the developer?</td><td class="no">No</td></tr>
+        <tr><td>Include analytics, advertising or tracking SDKs?</td><td class="no">No</td></tr>
+        <tr><td>Track you across other apps or websites?</td><td class="no">No</td></tr>
+        <tr><td>Sell or share personal data?</td><td class="no">No</td></tr>
+        <tr><td>Store your data on your device only?</td><td class="yes">Yes</td></tr>
+        <tr><td>Contact third-party services for artwork and subtitles?</td><td class="yes">Yes — see below</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Who this policy covers</h2>
+
+  <p>This policy describes how the Ultimate Player app ("the app") handles information. The app is published
+  by an independent developer, contactable at <a href="mailto:vnikie1@gmail.com">vnikie1@gmail.com</a>.
+  There is no company backend: the developer operates no server that stores or receives your data.</p>
+
+  <h2>What stays on your device</h2>
+
+  <p>Everything the app needs in order to work is stored in the app's own private storage on your device,
+  which no other app can read:</p>
+
+  <ul>
+    <li><strong>Your library index</strong> — the titles, folders and file paths found on the sources you
+      connected, plus the artwork and descriptions fetched for them.</li>
+    <li><strong>Viewing state</strong> — resume positions, watched markers, watchlist, playlists and
+      collections.</li>
+    <li><strong>Your settings</strong> — playback, appearance, subtitle and metadata preferences.</li>
+    <li><strong>Downloaded files</strong> — anything you chose to download for offline viewing.</li>
+    <li><strong>Server details</strong> — the addresses and credentials of the sources you added.</li>
+  </ul>
+
+  <p>None of this is transmitted to the developer. It is removed when you delete the app.</p>
+
+  <h2>Your servers and credentials</h2>
+
+  <p>Passwords and access tokens for the sources you add are encrypted on your device with AES-256-GCM, using
+  a key held in the iOS Keychain. They are sent only to the server you entered them for, in order to sign in
+  to it — never anywhere else.</p>
+
+  <p>When you connect to a Jellyfin or Plex server, the app identifies itself with a random identifier
+  generated on your device at install time. This lets your server list your device alongside your other
+  clients. It contains nothing about you, is not shared with any third party, and is regenerated if you
+  reinstall the app.</p>
+
+  <p>What your own server records about your activity is governed by that server's own configuration and by
+  the policies of whoever runs it — not by this policy.</p>
+
+  <h2>Local network access</h2>
+
+  <p>To offer you nearby servers instead of making you type in addresses, the app looks for SMB and FTP
+  services advertised on your local network. iOS asks your permission before this happens, and you can
+  refuse or later withdraw it in <strong>iOS Settings → Ultimate Player → Local Network</strong>. Nothing
+  discovered this way leaves your device. Declining only means you add servers manually.</p>
+
+  <h2>Third-party services the app contacts</h2>
+
+  <p>To show artwork, descriptions, ratings and subtitles, the app queries the following services directly
+  from your device. Each request contains the search terms needed to identify the title — typically a name
+  and year, or a filename — and, as with any internet request, your device's IP address is visible to that
+  service. No account identifier is attached, because the app has no accounts.</p>
+
+  <div class="card">
+    <h3>TMDB</h3>
+    <p>Artwork, descriptions and title details. This product uses the TMDB API but is not endorsed or
+      certified by TMDB. See <a href="https://www.themoviedb.org/privacy-policy" rel="noopener">TMDB's privacy
+      policy</a>.</p>
+  </div>
+
+  <div class="card">
+    <h3>OMDb API</h3>
+    <p>Ratings and supplementary title details. See <a href="https://www.omdbapi.com/" rel="noopener">omdbapi.com</a>.</p>
+  </div>
+
+  <div class="card">
+    <h3>OpenSubtitles and SubDL</h3>
+    <p>Contacted only when you search for or download subtitles. See
+      <a href="https://www.opensubtitles.com/en/privacy_policy" rel="noopener">OpenSubtitles' privacy policy</a>
+      and <a href="https://subdl.com/" rel="noopener">subdl.com</a>.</p>
+  </div>
+
+  <p>You can avoid metadata lookups entirely by turning artwork and metadata fetching off in
+  <strong>Settings → Metadata &amp; Artwork</strong>. Subtitle services are contacted only when you ask for
+  subtitles.</p>
+
+  <h2>Crash and performance data</h2>
+
+  <p>The app can collect crash and performance reports using Apple's built-in MetricKit. This is
+  <strong>off by default</strong> and only starts if you turn on <strong>Share Crash Data</strong> in
+  <strong>Settings → General</strong>.</p>
+
+  <p>Even when it is on, these reports are written to the app's own private storage on your device and are
+  <strong>not transmitted anywhere</strong>. They contain technical information such as launch times, memory
+  use and crash stack traces — not your library, your files or your viewing history. Turning the setting off
+  stops collection and deletes anything already collected.</p>
+
+  <h2>Purchases</h2>
+
+  <p>Ultimate Player is purchased through the App Store. Apple handles the transaction and your payment
+  details; the developer never sees them. Apple's handling of that information is covered by
+  <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>.</p>
+
+  <h2>Tracking</h2>
+
+  <p>The app does not track you. It contains no advertising or analytics SDK, does not use the Advertising
+  Identifier, does not build a profile of you, and never asks for App Tracking Transparency permission
+  because it has nothing to ask for.</p>
+
+  <h2>Children</h2>
+
+  <p>Ultimate Player is a general-audience utility and is not directed at children. It collects no personal
+  information from anyone, children included. The app plays whatever media you point it at, so a parent or
+  guardian should supervise what a child can reach through the sources they configure.</p>
+
+  <h2>Keeping your data, and deleting it</h2>
+
+  <p>Data stays on your device for as long as the app is installed. To remove all of it, delete the app —
+  that erases the library index, settings, viewing state, downloaded files, saved credentials and any
+  collected diagnostics. You can also clear downloads individually from <strong>Settings → Downloads</strong>,
+  and remove a source (along with everything indexed from it) from <strong>Settings</strong>.</p>
+
+  <p>Because the developer holds none of your data, there is nothing to request or delete from us. If you
+  live somewhere with data-protection rights such as the GDPR or CCPA, the practical effect is that those
+  rights are satisfied on your device: you hold the data and can delete it at any time.</p>
+
+  <h2>Changes to this policy</h2>
+
+  <p>If this policy changes, the revised version will be posted on this page with a new date at the top. A
+  change that materially affects how information is handled will also be noted in the app's release notes.</p>
+
+  <h2>Contact</h2>
+
+  <div class="card">
+    <p>Questions about this policy: <a href="mailto:vnikie1@gmail.com">vnikie1@gmail.com</a></p>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><a href="support.html">Support</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
+    <p>Ultimate Player is not affiliated with Jellyfin, Plex, TMDB, OMDb, OpenSubtitles or SubDL.</p>
+  </div>
+</footer>
+
+</body>
+</html>
