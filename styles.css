@@ -246,3 +246,11 @@ footer.site {
 footer.site a { color: var(--text-dim); }
 footer.site a:hover { color: var(--accent); }
 footer.site p { margin: 0 0 0.4rem; }
+
+/* Guide index — three device sections, so a reader can jump straight to their hardware. */
+.card.toc p { margin-bottom: 0.6rem; }
+.card.toc p:last-child { margin-bottom: 0; }
+.card.toc a { font-weight: 600; }
+
+/* Anchored headings shouldn't hide under nothing — give jump targets a little breathing room. */
+h2[id] { scroll-margin-top: 1rem; }
