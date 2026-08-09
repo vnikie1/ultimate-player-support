@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ultimate Player — Setup &amp; User Guide</title>
+<meta name="description" content="An illustrated walkthrough of Ultimate Player for iPhone and iPad: connecting a media server or network share, and using every screen in the app.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <h1>Ultimate Player</h1>
+    <p class="tagline">Play the media you already own — from your own servers, shares and device.</p>
+    <nav class="site">
+      <a href="support.html">Support</a>
+      <a href="guide.html" aria-current="page">Setup &amp; User Guide</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="../">All platforms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap guide">
+
+  <p class="lede">A picture-by-picture walkthrough for iPhone and iPad — first connecting a source, then
+  using the app. Every screenshot on this page is the real app running against a real server; nothing is
+  mocked up.</p>
+
+  <h2>What Ultimate Player is</h2>
+
+  <p>Ultimate Player is a video player for media you already own. It <strong>ships no content of its own</strong>
+  and streams nothing from us. You point it at a media server or a network share you control, and it builds
+  a browsable library from what it finds there — with artwork, cast, ratings, subtitles and resume positions.</p>
+
+  <div class="card">
+    <h3>What it can connect to</h3>
+    <p><strong>Media servers</strong> — Jellyfin and Plex. Libraries, artwork and watch state come from the
+      server, and your playback progress is reported back to it.</p>
+    <p><strong>Network shares</strong> — SMB (NAS boxes, Windows shares, macOS file sharing), FTP and WebDAV.
+      The app scans the share, identifies the files and fetches artwork and metadata for them.</p>
+    <p><strong>On the device</strong> — a local folder you pick, a direct URL, or titles you have downloaded
+      for offline playback.</p>
+  </div>
+
+  <div class="card">
+    <h3>What it does with them</h3>
+    <p>A grouped library with films and TV shows separated and episodes gathered under their series · artwork,
+      synopses, cast and ratings from TMDB and OMDb · subtitle search and download · resume across every
+      device signed in to the same server · offline downloads · Picture in Picture · and a 10-foot interface
+      on Apple TV.</p>
+  </div>
+
+  <h2>Just want to look around first?</h2>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">1</span>Open the app</h3>
+      <p>On a fresh install the Home screen shows a <strong>sample library</strong>. Those titles are
+      placeholders so the app isn't empty while you look around — they disappear the moment you add a real
+      source.</p>
+      <p>If you want to see the app working properly before wiring up your own server, tap
+      <strong>Load a demo library</strong>.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/first-launch.jpg" alt="Ultimate Player on first launch, showing a sample library and a Load a demo library button." loading="lazy">
+      <figcaption>First launch — sample library and the demo button.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">2</span>The demo library</h3>
+      <p>One tap connects the app to the public <strong>Jellyfin demo server</strong>. No account, no password
+      and nothing to configure. Home fills with real titles, a Continue Watching row and a Next Up row, and
+      everything in the app becomes explorable — including playback.</p>
+      <p class="note"><strong>Reviewers:</strong> this is the quickest way to evaluate the app without a
+      media server of your own. It connects exactly like any other Jellyfin source, so what you see is the
+      real product, not a special mode. It retires itself automatically as soon as you add a source of your
+      own, and comes back if you remove them all.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/demo-library.jpg" alt="Home screen populated with titles from the Jellyfin demo library." loading="lazy">
+      <figcaption>After tapping <em>Load a demo library</em>.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Connecting your own source</h2>
+
+  <p>Everything starts in the same place: <strong>Settings → Add Movies/TV Shows</strong>. From here you can
+  add a share, connect a media server, paste a direct URL, or reach your downloads.</p>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">1</span>Open Add Movies/TV Shows</h3>
+      <p>Go to the <strong>Settings</strong> tab and tap <strong>Add Movies/TV Shows</strong>. The
+      <em>Locations</em> group is where new sources are added; <em>Saved Shares</em> below it lists what you
+      have already connected.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/add-sources.jpg" alt="The Add Movies slash TV Shows screen with Locations and Saved Shares sections." loading="lazy">
+      <figcaption>Settings → Add Movies/TV Shows.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">2</span>Let the app find your server</h3>
+      <p>Tap <strong>Add Movie/TV Shows share</strong>. The app scans your local network and lists what it
+      finds under <em>Available Shares</em> — media servers and SMB hosts alike. Tapping one pre-fills its
+      address for you.</p>
+      <p>Below that, <em>Network Shares</em> and <em>Media Servers</em> let you type an address in by hand if
+      your server isn't discoverable.</p>
+      <p class="note">The first time the app scans, <strong>iOS asks for permission to find devices on your
+      local network</strong>. If you decline, discovery stays empty — you can still add a server by typing
+      its address, or re-enable it later in <strong>iOS Settings → Ultimate Player → Local Network</strong>.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/discovery.jpg" alt="Available Shares listing discovered servers on the local network." loading="lazy">
+      <figcaption>Automatic discovery on the local network.</figcaption>
+    </figure>
+  </div>
+
+  <h3>Option A — a media server (Jellyfin or Plex)</h3>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">3</span>Enter the server address</h3>
+      <p>Picking a discovered server fills in its <strong>display name</strong> and <strong>address</strong>
+      for you. Add the <strong>username</strong> and <strong>password</strong> for your account on that
+      server — these are your Jellyfin or Plex credentials, not an Ultimate Player account. There is no such
+      thing as an Ultimate Player account.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/jellyfin-form.jpg" alt="The Jellyfin connect form with the server address pre-filled from discovery." loading="lazy">
+      <figcaption>Address pre-filled from discovery.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">4</span>Or skip the password entirely</h3>
+      <p>Jellyfin servers support <strong>Quick Connect</strong>. Tap it and the app shows a short code —
+      approve that code from any device already signed in to your Jellyfin (the web dashboard, or the app on
+      another device) and you are signed in without typing a password at all.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/quick-connect.jpg" alt="Quick Connect showing a six digit code awaiting approval." loading="lazy">
+      <figcaption>Quick Connect — approve the code on a signed-in device.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">5</span>Connect and scan</h3>
+      <p>With the details filled in, <strong>Connect &amp; Scan</strong> becomes available. The app signs in,
+      reads your libraries and builds the browsable library. A small collection is ready in seconds; a large
+      one keeps filling in artwork in the background while you browse.</p>
+      <p>iOS may offer to save the password to your keychain afterwards — that prompt is from iOS, not from
+      the app, and either answer is fine.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/jellyfin-filled.jpg" alt="The connect form completed with username and password, Connect and Scan enabled." loading="lazy">
+      <figcaption>Ready to connect. The password is never shown.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">6</span>Confirm it worked</h3>
+      <p>Back in <strong>Settings</strong>, each connected source gets a live status card: a green
+      <em>Live</em> dot when the server is reachable, and a breakdown of what was found — files, movies,
+      shows and unidentified "others". The circular arrow rescans that source.</p>
+      <p>Home now leads with your own library.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/home-jellyfin.jpg" alt="Home screen showing the user's own library with a resume row." loading="lazy">
+      <figcaption>Home, driven by your own server.</figcaption>
+    </figure>
+  </div>
+
+  <h3>Option B — a network share (SMB, FTP or WebDAV)</h3>
+
+  <p>A share has no notion of a library, so the app scans the files itself and then identifies them. SMB is
+  shown here; FTP and WebDAV use the same form with a different port.</p>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">3</span>Fill in the share details</h3>
+      <p>Choose <strong>Add SMB</strong> under <em>Network Shares</em>. The fields are:</p>
+      <ul>
+        <li><strong>Display name</strong> — optional; what you want to call it in the app.</li>
+        <li><strong>Host / IP</strong> — your NAS or PC address, e.g. <code>192.168.1.20</code> or
+          <code>nas.local</code>.</li>
+        <li><strong>Port</strong> — 445 for SMB unless your server uses a custom one.</li>
+        <li><strong>Share name</strong> — the shared folder to scan, e.g. <code>Movies</code>.</li>
+        <li><strong>Folder path</strong> — optional; a sub-folder inside the share, to narrow the scan.</li>
+        <li><strong>Username / Password</strong> — leave both empty to connect as a guest.</li>
+        <li><strong>Domain</strong> — only for Windows-domain networks; leave blank otherwise.</li>
+      </ul>
+    </div>
+    <figure class="shot">
+      <img src="images/smb-form.jpg" alt="The empty Connect a share form for SMB." loading="lazy">
+      <figcaption>The SMB form.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">4</span>Connect &amp; Scan</h3>
+      <p>The app connects, walks the share and identifies what it finds. Scanning a large share takes longer
+      than a media server, because the app is reading the files rather than being handed a catalogue.</p>
+      <p class="note"><strong>One share per folder.</strong> If your media is split across
+      <code>Movies</code> and <code>TVShows</code>, add each as its own share — repeat this step with the
+      other share name. They appear as separate sources but merge into one library.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/smb-filled.jpg" alt="The SMB form completed with host, share name and credentials." loading="lazy">
+      <figcaption>Completed for a <em>Movies</em> share.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">5</span>Both shares connected</h3>
+      <p><em>Saved Shares</em> now lists each share with its path and how many items it holds. Tapping the
+      pencil opens the actions for that source.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/smb-both-shares.jpg" alt="Saved Shares listing two SMB shares with item counts." loading="lazy">
+      <figcaption>Two shares, 186 and 500 items.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step wide">
+    <div class="body">
+      <h3><span class="num">6</span>Your library</h3>
+      <p>The <strong>Library</strong> tab shows everything from every source, sorted alphabetically with a
+      jump rail down the side. Films and TV shows are separated, and episodes are gathered under their
+      series rather than listed individually.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/library.jpg" alt="The Library tab showing a grid of film posters with an A to Z jump rail." loading="lazy">
+      <figcaption>Library, built from two SMB shares.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Managing your sources</h2>
+
+  <div class="step">
+    <div class="body">
+      <p>Tap the <strong>pencil</strong> beside any saved share for its actions:</p>
+      <ul>
+        <li><strong>Edit</strong> — change the address or credentials.</li>
+        <li><strong>Rescan</strong> — look for new files.</li>
+        <li><strong>Refresh metadata</strong> — fetch artwork and details again.</li>
+        <li><strong>Clear metadata</strong> — discard what was fetched and start over.</li>
+        <li><strong>Remove share</strong> — disconnect it and drop its titles from the library.</li>
+      </ul>
+      <p>Removing a source never touches the files on your server or NAS — it only disconnects it here.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/share-menu.jpg" alt="The share actions menu with Edit, Rescan, Refresh metadata, Clear metadata and Remove share." loading="lazy">
+      <figcaption>Per-source actions.</figcaption>
+    </figure>
+  </div>
+
+  <div class="shot-row">
+    <figure class="shot">
+      <img src="images/saved-shares.jpg" alt="Saved Shares listing a connected media server with its address and item count." loading="lazy">
+      <figcaption>Each saved source shows its address and how many items it contributed.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="images/after-remove.jpg" alt="The Add Movies screen after removing the last source, with the demo library offer back." loading="lazy">
+      <figcaption>Remove every source and the demo offer returns — nothing on your server is touched.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Finding your way around</h2>
+
+  <div class="shot-row">
+    <figure class="shot">
+      <img src="images/home.jpg" alt="The Home tab with a Continue Watching hero and content rows." loading="lazy">
+      <figcaption><strong>Home</strong> — what you were watching, what's next, and rows drawn from your
+      sources.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="images/search-browse.jpg" alt="The Search tab showing Browse categories." loading="lazy">
+      <figcaption><strong>Search</strong> — type to search, or use Browse to reach playlists, genres,
+      unwatched titles and more.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="images/search-results.jpg" alt="Live search results for the query alien." loading="lazy">
+      <figcaption>Results update as you type, across every connected source.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3>A film</h3>
+      <p>Tap any poster for its detail page: artwork, runtime, release date, certification, genres, synopsis,
+      ratings from TMDB, IMDb, Rotten Tomatoes and Metacritic, and the cast.</p>
+      <p>The row of buttons under <strong>Play</strong> covers marking watched, downloading for offline,
+      trailers, your own rating, and sharing. The <strong>⋯</strong> button at the top right adds the title
+      to your Watchlist, a playlist or a collection, and offers Edit Metadata.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/detail-movie.jpg" alt="A film detail page with artwork, ratings and cast." loading="lazy">
+      <figcaption>Film detail.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3>A TV show</h3>
+      <p>A series opens on the episode you are most likely to want next — the one you were part-way through,
+      or the one after the last you finished. The episode strip runs along the bottom; tapping an episode
+      retargets the Play button without leaving the page.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/detail-series.jpg" alt="A TV series detail page with an episode carousel." loading="lazy">
+      <figcaption>Series detail, opened on S1·E1.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step wide">
+    <div class="body">
+      <h3>The player</h3>
+      <p>Tap once to show or hide the controls. You get a scrubber with the current position and total
+      runtime, skip buttons either side of play/pause, and along the bottom edge: playback settings
+      (subtitles, audio track, speed), AirPlay, and file information.</p>
+      <p>Playback streams directly from your server or share — nothing is copied to the device unless you
+      explicitly download it. Position is saved continuously, so leaving mid-film and coming back resumes
+      where you were.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/player.jpg" alt="The video player in landscape with on-screen controls." loading="lazy">
+      <figcaption>Playing straight from an SMB share.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3>Picking up where you left off</h3>
+      <p>Leave a title part-way through and its Play button becomes <strong>Resume</strong> with the exact
+      position. The same title also appears in Continue Watching on Home. With a Jellyfin or Plex server,
+      that position is reported back to the server, so it follows you to other devices.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/detail-resume.jpg" alt="A detail page whose Play button now reads Resume 4:50." loading="lazy">
+      <figcaption>The Play button becomes <em>Resume</em>.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Settings, screen by screen</h2>
+
+  <div class="step">
+    <div class="body">
+      <h3>Settings</h3>
+      <p>The top of the Settings tab is a live status card per source — reachability, and a breakdown of what
+      was found. Below it are the sections covered here.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/settings.jpg" alt="The Settings tab with two live source cards." loading="lazy">
+      <figcaption>Live status per source.</figcaption>
+    </figure>
+  </div>
+
+  <div class="shot-row">
+    <figure class="shot">
+      <img src="images/playback.jpg" alt="Playback settings — resume, continuous playback, speed and skip lengths." loading="lazy">
+      <figcaption><strong>Playback</strong> — resume, auto-play the next episode, speed, how far the skip
+      buttons jump, and subtitle appearance.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="images/playback-lower.jpg" alt="Playback settings continued — subtitles and video and audio options." loading="lazy">
+      <figcaption>Further down: subtitle size and colour, streaming cache, and scrubbing previews.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="images/general.jpg" alt="General settings — library, appearance, downloads, home and privacy." loading="lazy">
+      <figcaption><strong>General</strong> — appearance (light/dark/system), what Home shows, filename
+      display, and cellular downloads.</figcaption>
+    </figure>
+  </div>
+
+  <div class="shot-row">
+    <figure class="shot">
+      <img src="images/metadata.jpg" alt="Metadata and Artwork settings." loading="lazy">
+      <figcaption><strong>Metadata &amp; Artwork</strong> — whether to fetch details at all, prefer artwork
+      already on your server, and clear the cache.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="images/your-library.jpg" alt="Your Library showing Watchlist, Playlists and Collections." loading="lazy">
+      <figcaption><strong>Your Library</strong> — your Watchlist, playlists and collections, all created from
+      a title's ⋯ menu.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="images/downloads.jpg" alt="The Downloads screen, empty." loading="lazy">
+      <figcaption><strong>Downloads</strong> — titles saved for offline playback, added from a title's ⋯
+      menu.</figcaption>
+    </figure>
+  </div>
+
+  <p><strong>About &amp; Legal</strong> holds the app version, this support site, the Privacy Policy and
+  Terms of Use, and the open-source acknowledgements. Quote the version from there if you get in touch.</p>
+
+  <h2>On iPad</h2>
+
+  <p>Everything above applies, with a layout that uses the extra width. The steps and field names are
+  identical.</p>
+
+  <div class="shot-row">
+    <figure class="shot">
+      <img src="images/ipad-first-launch.jpg" alt="Ultimate Player on iPad at first launch." loading="lazy">
+      <figcaption>First launch on iPad — the same sample library and demo button.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="images/ipad-discovery.jpg" alt="iPad discovery listing available shares, network shares and media servers." loading="lazy">
+      <figcaption>Discovery, with the Media Servers section visible without scrolling.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step wide">
+    <div class="body">
+      <h3>Settings is two panes</h3>
+      <p>Categories stay on the left and the selected one opens beside them, so you never lose your place.
+      Source status cards sit in the right-hand pane.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/ipad-settings.jpg" alt="iPad Settings showing categories on the left and live source cards on the right." loading="lazy">
+      <figcaption>iPad Settings — categories left, detail right.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step wide">
+    <div class="body">
+      <h3>Adding a source</h3>
+      <p>The same discovery list and the same forms — and on iPad the share form carries its field guide
+      inline, under the button.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/ipad-smb-filled.jpg" alt="The iPad SMB form completed, with inline help explaining each field." loading="lazy">
+      <figcaption>Every field explained beneath the form.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step wide">
+    <div class="body">
+      <h3>Browsing</h3>
+      <p>Library becomes a wider grid, Search lays its Browse categories out in columns, and a title's detail
+      page puts the poster and actions beside the synopsis and cast instead of below them — including the
+      technical file information for the selected title.</p>
+    </div>
+    <figure class="shot">
+      <img src="images/ipad-detail.jpg" alt="An iPad film detail page with poster and actions on the left, synopsis and cast on the right." loading="lazy">
+      <figcaption>iPad detail — two columns, with file information.</figcaption>
+    </figure>
+  </div>
+
+  <div class="shot-row">
+    <figure class="shot">
+      <img src="images/ipad-home.jpg" alt="The iPad Home screen." loading="lazy">
+      <figcaption>Home on iPad.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="images/ipad-library.jpg" alt="The iPad Library grid." loading="lazy">
+      <figcaption>Library, four columns wide.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="images/ipad-search.jpg" alt="The iPad Search screen with Browse categories in a grid." loading="lazy">
+      <figcaption>Search, with Browse in a grid.</figcaption>
+    </figure>
+  </div>
+
+  <h2>If something goes wrong</h2>
+
+  <div class="card">
+    <h3>My server doesn't appear when I scan</h3>
+    <p>Discovery needs local-network permission — check <strong>iOS Settings → Ultimate Player → Local
+      Network</strong>. Some networks (guest Wi-Fi, and many corporate ones) block the discovery traffic
+      entirely; in that case type the address in by hand under <em>Network Shares</em> or
+      <em>Media Servers</em>. Also confirm the device and the server are on the same network — a phone on
+      cellular can't see your NAS.</p>
+  </div>
+
+  <div class="card">
+    <h3>It connects but no videos appear</h3>
+    <p>Check the <strong>share name</strong> is the shared folder itself rather than a path inside it, and
+    that the account you used can read that folder. If the share holds sub-folders, leave
+    <em>Folder path</em> empty so the whole share is scanned. The status card in Settings shows what the
+    scan actually found.</p>
+  </div>
+
+  <div class="card">
+    <h3>Titles show up as "others"</h3>
+    <p>"Others" means the file was found but not yet identified. Give metadata fetching a moment to catch up,
+    then use <strong>Refresh metadata</strong> on the source. Files identify far more reliably when named
+    <code>Title (Year)</code> for films and <code>Show S01E02</code> for episodes. Anything that stays
+    unidentified is still playable — you can also fix it by hand with <strong>Edit Metadata</strong>.</p>
+  </div>
+
+  <div class="card">
+    <h3>A video won't play, or plays with no picture</h3>
+    <p>Ultimate Player falls back to its own decoder for formats iOS can't play natively, but some
+    combinations still need transcoding on the server. If you are on a media server, try enabling
+    transcoding there. If playback stutters over a share, raise <strong>Streaming Cache</strong> in
+    <strong>Settings → Playback</strong>.</p>
+  </div>
+
+  <div class="card">
+    <h3>Subtitles are missing or out of sync</h3>
+    <p>Subtitles embedded in the file and sidecar <code>.srt</code> files beside it are both picked up
+    automatically. Otherwise search for one from the player's settings button. Size, colour and background
+    are in <strong>Settings → Playback → Subtitles</strong>.</p>
+  </div>
+
+  <h2>Getting in touch</h2>
+
+  <p>If none of the above helps, see the <a href="support.html">Support page</a> for how to reach us. It
+  helps enormously to include the app version from <strong>Settings → About &amp; Legal</strong>, the kind of
+  server or share you are connecting to, and what you expected to happen.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><a href="support.html">Support</a> · <a href="guide.html">Setup &amp; User Guide</a> ·
+      <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
+    <p>Ultimate Player is not affiliated with Jellyfin, Plex, TMDB, OMDb, OpenSubtitles or SubDL.</p>
+  </div>
+</footer>
+
+</body>
+</html>

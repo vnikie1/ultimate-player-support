@@ -141,6 +141,98 @@ thead th { border-bottom-width: 2px; }
 .yes { color: #4e9a5b; font-weight: 600; }
 .no { color: var(--accent-bright); font-weight: 600; }
 
+/* Illustrated guide — screenshots and numbered steps.
+   The guide runs wider than the text pages: a phone screenshot beside its instructions needs more than
+   46rem, and iPad shots are wider still. Everything below is scoped to .guide so the text-only pages keep
+   their original measure. */
+
+.guide { max-width: 62rem; }
+
+.step {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  gap: 1.5rem 2rem;
+  /* Centred, not top-aligned: a phone screenshot is far taller than three lines of instructions, and
+     top-aligning left a tall void under every short step. */
+  align-items: center;
+  margin: 0 0 2.5rem;
+}
+
+/* Wide shots (iPad, the landscape player) get the full column instead of a narrow phone slot. */
+.step.wide { grid-template-columns: minmax(0, 1fr); }
+.step.wide .shot { max-width: 100%; }
+
+.step > .body > :first-child { margin-top: 0; }
+.step > .body > :last-child { margin-bottom: 0; }
+
+figure.shot { margin: 0; }
+
+figure.shot img {
+  display: block;
+  /* Capped so a portrait phone screenshot can't run to 520px and stretch the page — it scales down and
+     centres in its column instead. Landscape shots are well under the cap and are unaffected. */
+  width: auto;
+  max-width: 100%;
+  max-height: 30rem;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid var(--outline);
+  /* Screenshots are photographs of a UI, not diagrams — a little lift stops them sitting flat on the page. */
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.10);
+  background: var(--surface);
+}
+
+figure.shot figcaption {
+  margin-top: 0.5rem;
+  color: var(--text-dim);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+/* A row of two or three shots that belong together (e.g. before / after). */
+.shot-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.25rem;
+  margin: 0 0 2rem;
+}
+
+/* Numbered step badge, so a long setup flow stays countable. */
+.step .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem; height: 1.6rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-right: 0.5rem;
+  flex: none;
+}
+
+.step h3 { display: flex; align-items: center; margin-top: 0; }
+
+/* Callout for the things support tickets are actually about. */
+.note {
+  border-left: 3px solid var(--accent);
+  background: var(--bg-tint);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.9rem 1.1rem;
+  margin: 0 0 1.25rem;
+}
+.note > :first-child { margin-top: 0; }
+.note > :last-child { margin-bottom: 0; }
+.note strong { color: var(--accent); }
+
+/* On a phone the two-column step collapses; the screenshot goes first so you see it before the words. */
+@media (max-width: 46rem) {
+  .step { grid-template-columns: minmax(0, 1fr); }
+  figure.shot { max-width: 20rem; margin: 0 auto; }
+}
+
 /* Footer */
 
 footer.site {
