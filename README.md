@@ -1,7 +1,9 @@
-# Ultimate Player — Support &amp; Legal
+# Ultimate Media Player — Support &amp; Legal
 
-Public support, privacy and terms pages for the **Ultimate Player** apps, served by GitHub Pages from the
-`main` branch of this repo.
+Public support, privacy and terms pages, served by GitHub Pages from the `main` branch of this repo.
+
+The app is listed as **Ultimate Media Player** on the App Store and as **Ultimate Player** on Google Play,
+so the two sets of pages use different names on purpose — see below.
 
 ## Pages
 
@@ -12,6 +14,18 @@ Public support, privacy and terms pages for the **Ultimate Player** apps, served
 | iOS privacy | <https://vnikie1.github.io/ultimate-player-support/ios/privacy.html> | App Store Connect **Privacy Policy URL** (required); in-app |
 | iOS terms | <https://vnikie1.github.io/ultimate-player-support/ios/terms.html> | In-app |
 | Android privacy | <https://vnikie1.github.io/ultimate-player-support/android-privacy.html> | Google Play listing **Privacy Policy URL** |
+
+## ⚠️ Two names, deliberately
+
+- The **App Store** listing is *Ultimate Media Player*; the `ios/` pages use that name throughout.
+- The **Google Play** listing is still *Ultimate Player*, so `android-privacy.html` keeps the old name.
+  Don't "fix" it to match the iOS pages.
+- The **on-device** name is still *Ultimate Player* (`INFOPLIST_KEY_CFBundleDisplayName` in the iOS
+  project), which is what iOS Settings shows. The five *"iOS Settings → Ultimate Player → Local Network"*
+  instructions in `ios/support.html`, `ios/privacy.html` and `ios/guide.html` therefore keep the old name on
+  purpose. If the bundle display name is ever changed, those five must change with it.
+- The repo, its Pages URLs and every path stay `ultimate-player-support` — renaming any of them breaks the
+  App Store Connect, Play Console and in-app links below.
 
 ## ⚠️ Two listings depend on these paths
 
