@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ultimate Player for Android — Support</title>
+<meta name="description" content="Support, setup help and troubleshooting for Ultimate Player on Android — the media player for your own Jellyfin or Plex server and network shares.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <h1>Ultimate Player for Android</h1>
+    <p class="tagline">Play the media you already own — from your own servers, shares and device.</p>
+    <nav class="site">
+      <a href="support.html" aria-current="page">Support</a>
+      <a href="guide.html">Setup &amp; User Guide</a>
+      <a href="../android-privacy.html">Privacy Policy</a>
+      <a href="../">All platforms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="lede">Ultimate Player connects to media you already have. It ships no content of its own —
+  you point it at a network share or media server, and it builds a browsable library with artwork,
+  subtitles and resume positions.</p>
+
+  <div class="card">
+    <p>New here? The <a href="guide.html">illustrated Setup &amp; User Guide</a> walks through
+      connecting a source and using every screen, with a screenshot of each step.</p>
+  </div>
+
+  <h2>Getting started</h2>
+
+  <p>On first launch the app shows a sample library so you can look around, and a short walkthrough that
+  you can dismiss at any time. Those sample titles are placeholders — they disappear as soon as you add
+  a real source. Tapping <strong>Load a demo library</strong> connects a public Jellyfin demo server if
+  you want to try the app properly before wiring up your own.</p>
+
+  <ol>
+    <li>Open <strong>Settings</strong> → <strong>Add Files</strong>.</li>
+    <li>Tap <strong>Add Share</strong> and pick your server from <em>On Your Network</em>, or choose the
+      kind of source you want to add by hand.</li>
+    <li>Enter the address, and a username and password if the source needs one.</li>
+    <li>Tap <strong>Connect &amp; Scan</strong>. The app scans the source and builds your library —
+      usually seconds for a media server, longer for a large network share.</li>
+  </ol>
+
+  <h2>What you can connect</h2>
+
+  <div class="card">
+    <h3>Media servers</h3>
+    <p><strong>Jellyfin</strong> · <strong>Plex</strong> — libraries, artwork and watch state come from
+      the server, and playback progress is reported back to it, so resume follows you between
+      devices.</p>
+  </div>
+
+  <div class="card">
+    <h3>Network shares</h3>
+    <p><strong>SMB</strong> (NAS boxes, Windows shares, macOS file sharing) · <strong>FTP</strong> ·
+      <strong>NFS</strong> · <strong>WebDAV</strong></p>
+  </div>
+
+  <div class="card">
+    <h3>On this device</h3>
+    <p>A folder on your phone, a direct video URL, and anything you have downloaded in the app for
+      offline playback.</p>
+  </div>
+
+  <h2>Troubleshooting</h2>
+
+  <h3>My server does not appear when I scan</h3>
+  <ul>
+    <li>Give it a few seconds — "Searching your network…" is not a failure.</li>
+    <li>Confirm the phone and the server are on the same network. Mobile data can't reach your NAS, and
+      a VPN on either end will usually break discovery.</li>
+    <li>Automatic discovery is a convenience, not a requirement. Add the server manually with its IP
+      address and port instead — that path does not depend on discovery working.</li>
+  </ul>
+
+  <h3>The share connects but no videos show up</h3>
+  <ul>
+    <li>Check the account you signed in with can actually read that folder.</li>
+    <li>Point the app at the folder that holds the media rather than the very top of a large drive — a
+      scan that has to walk an entire disk takes a long time.</li>
+    <li>The status card in <strong>Settings</strong> shows exactly what the scan found. The circular
+      arrow on it rescans.</li>
+  </ul>
+
+  <h3>Titles are listed as "others"</h3>
+  <ul>
+    <li>"Others" means the file was found but not identified. A large share takes a few minutes to
+      identify everything; the Home top bar shows progress while it works.</li>
+    <li>Files identify far more reliably when named <code>Title (Year)</code> for films and
+      <code>Show S01E02</code> for episodes.</li>
+    <li>Use <strong>Re-fetch all metadata</strong> on the source, or fix a single title by hand with
+      <strong>Edit Metadata</strong>. Unidentified files still play.</li>
+  </ul>
+
+  <h3>A video will not play, or stalls partway</h3>
+  <ul>
+    <li>The app bundles extra decoders for audio Android often lacks (Dolby AC-3/E-AC-3, DTS), but some
+      combinations still need the server to transcode. On Jellyfin or Plex, change
+      <strong>Quality</strong> in the player's settings to have the server do the work.</li>
+    <li>Very high-bitrate 4K over Wi-Fi can outrun the connection. Lower the quality, move closer to the
+      router, or download the title for offline playback.</li>
+    <li>If playback stops partway through, the connection to the server most likely dropped — the player
+      offers a Retry.</li>
+  </ul>
+
+  <h3>Subtitles are missing or out of sync</h3>
+  <ul>
+    <li>Subtitles inside the file and sidecar <code>.srt</code> files beside it are picked up
+      automatically.</li>
+    <li>If there are none, use <strong>Download subtitles…</strong> in the player's settings to search
+      online.</li>
+    <li>Size, colour and background are in <strong>Settings → Playback → Subtitles</strong>.</li>
+  </ul>
+
+  <h3>Downloads</h3>
+  <ul>
+    <li>Download a title from its detail page; manage everything in <strong>Settings →
+      Downloads</strong>.</li>
+    <li>Downloads are Wi-Fi only by default. To allow mobile data, turn on <strong>Cellular Sync &amp;
+      Download</strong> in <strong>Settings → General</strong>.</li>
+    <li>Downloaded titles play with no network at all, and appear under the <em>Downloaded</em> tab in
+      Library.</li>
+  </ul>
+
+  <h2>Android TV</h2>
+
+  <p>The same app runs on Android TV and Google TV with a dedicated 10-foot interface for the remote.
+  Sources are added the same way, and Jellyfin's <strong>Quick Connect</strong> lets you sign in by
+  approving a code on another device instead of typing a password with the D-pad.</p>
+
+  <h2>Get in touch</h2>
+
+  <div class="card">
+    <p>Questions, bug reports and feature requests are all welcome. Email
+      <a href="mailto:vnikie1@gmail.com">vnikie1@gmail.com</a>.</p>
+    <p>To help sort a problem out quickly, it is worth including your device model and Android version,
+      the app version from <strong>Settings</strong>, the kind of server or share you are connecting to,
+      and what you expected to happen.</p>
+  </div>
+
+  <h2>Privacy in one line</h2>
+
+  <p>Ultimate Player has no account system, no analytics and no advertising, and the developer operates
+  no server that receives your data. The full detail is in the
+  <a href="../android-privacy.html">Privacy Policy</a>.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><a href="support.html">Support</a> · <a href="guide.html">Setup &amp; User Guide</a> ·
+      <a href="../android-privacy.html">Privacy Policy</a> · <a href="../">All platforms</a></p>
+    <p>Ultimate Player is not affiliated with Jellyfin, Plex, TMDB, OMDb, OpenSubtitles or SubDL.</p>
+  </div>
+</footer>
+
+</body>
+</html>

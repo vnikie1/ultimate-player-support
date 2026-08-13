@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ultimate Player for Android — Setup &amp; User Guide</title>
+<meta name="description" content="An illustrated walkthrough of Ultimate Player for Android: connecting a Jellyfin or Plex server or a network share, and using every screen in the app.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <h1>Ultimate Player for Android</h1>
+    <p class="tagline">Play the media you already own — from your own servers, shares and device.</p>
+    <nav class="site">
+      <a href="support.html">Support</a>
+      <a href="guide.html" aria-current="page">Setup &amp; User Guide</a>
+      <a href="../android-privacy.html">Privacy Policy</a>
+      <a href="../">All platforms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap guide">
+
+  <p class="lede">A picture-by-picture walkthrough for Android — first connecting a source, then using
+  the app. Every screenshot on this page is the real app running against a real Jellyfin server and a
+  real NAS; nothing is mocked up.</p>
+
+  <div class="card toc">
+    <h3>Jump to your device</h3>
+    <p><a href="#phone">Phone guide</a> — connecting a source and using every screen. The setup steps are
+      the same on every device, so start here whichever you own.</p>
+    <p><a href="#tablet">Tablet guide</a> — the same app with a layout that uses the extra width.</p>
+    <p><a href="#androidtv">Android TV</a> — the 10-foot interface, driven by the remote.</p>
+  </div>
+
+  <h2>What Ultimate Player is</h2>
+
+  <p>Ultimate Player is a video player for media you already own. It <strong>ships no content of its
+  own</strong> and streams nothing from us. You point it at a media server or a network share you
+  control, and it builds a browsable library from what it finds there — with artwork, cast, ratings,
+  subtitles and resume positions.</p>
+
+  <div class="card">
+    <h3>What it can connect to</h3>
+    <p><strong>Media servers</strong> — Jellyfin and Plex. Libraries, artwork and watch state come from
+      the server, and your playback progress is reported back to it.</p>
+    <p><strong>Network shares</strong> — SMB (NAS boxes, Windows shares, macOS file sharing), FTP, NFS
+      and WebDAV. The app scans the share, identifies the files and fetches artwork and metadata.</p>
+    <p><strong>On the device</strong> — a folder on your phone, a direct URL, or titles you have
+      downloaded for offline playback.</p>
+  </div>
+
+  <div class="card">
+    <h3>What it does with them</h3>
+    <p>A grouped library with films and TV shows separated and episodes gathered under their series ·
+      artwork, synopses, cast and ratings from TMDB and OMDb · subtitle search and download · resume
+      across every device signed in to the same server · offline downloads · Picture in Picture · and a
+      10-foot interface on Android TV.</p>
+  </div>
+
+  <h2 id="phone">Just want to look around first?</h2>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">1</span>Open the app</h3>
+      <p>On first launch a short <strong>walkthrough</strong> points out the main parts of the app. It
+      never blocks the screen — you can keep scrolling and tapping while it is up, step through it with
+      <strong>Next</strong>, or dismiss it any time with the <strong>✕</strong>.</p>
+      <p>You can replay it later from <strong>Settings → Replay walkthrough</strong>.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/walkthrough.jpg" alt="The first-run walkthrough card over the Home screen, with Skip and Next buttons.">
+      <figcaption>The first-run walkthrough.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">2</span>The sample library</h3>
+      <p>Behind it, Home shows a <strong>sample library</strong>. Those titles are placeholders so the
+      app isn't empty while you look around — they disappear the moment you add a real source.</p>
+      <p>If you want to see the app working properly before wiring up your own server, tap
+      <strong>Load a demo library</strong>.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/first-launch.jpg" alt="Ultimate Player on first launch, showing a sample library and a Load a demo library button.">
+      <figcaption>First launch — sample library and the demo button.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">3</span>The demo library</h3>
+      <p>One tap connects the app to the public <strong>Jellyfin demo server</strong>. No account, no
+      password and nothing to configure. Home fills with real titles, a Continue Watching row and a Next
+      Up row, and everything in the app becomes explorable — including playback.</p>
+      <p class="note"><strong>Reviewers:</strong> this is the quickest way to evaluate the app without a
+      media server of your own. It connects exactly like any other Jellyfin source, so what you see is
+      the real product, not a special mode. It retires itself automatically as soon as you add a source
+      of your own, and comes back if you remove them all.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/demo-library.jpg" alt="Home screen populated with titles from the Jellyfin demo library.">
+      <figcaption>After tapping <em>Load a demo library</em>.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Connecting your own source</h2>
+
+  <p>Everything starts in the same place: <strong>Settings → Add Files</strong>. From here you can add a
+  share, connect a media server, paste a direct URL, or reach your downloads.</p>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">1</span>Open Add Files</h3>
+      <p>Go to the <strong>Settings</strong> tab and tap <strong>Add Files</strong>. The
+      <em>Locations</em> group is where new sources are added; <em>Saved Shares</em> below it lists what
+      you have already connected.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/add-sources.jpg" alt="The Add Files screen with Locations and Saved Shares sections.">
+      <figcaption>Settings → Add Files.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">2</span>Let the app find your server</h3>
+      <p>Tap <strong>Add Share</strong>. The app scans your local network and lists what it finds under
+      <em>On Your Network</em> — media servers and SMB hosts alike. Tapping one pre-fills its address
+      for you.</p>
+      <p>Below that, <em>Local Shares</em>, <em>Network Shares</em> and <em>Media Servers</em> let you
+      add a source by hand if it isn't discoverable.</p>
+      <p class="note">Discovery takes a few seconds to fill in — "Searching your network…" is not a
+      failure. Some networks (guest Wi-Fi, and many corporate ones) block discovery traffic entirely; in
+      that case type the address in by hand, which does not depend on discovery at all.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/discovery.jpg" alt="The Add Share screen listing servers discovered on the local network.">
+      <figcaption>Automatic discovery on the local network.</figcaption>
+    </figure>
+  </div>
+
+  <h3>Option A — a media server (Jellyfin or Plex)</h3>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">3</span>Enter the server address</h3>
+      <p>Picking a discovered server fills in its <strong>display name</strong> and
+      <strong>address</strong> for you. Add the <strong>username</strong> and <strong>password</strong>
+      for your account on that server — these are your Jellyfin or Plex credentials, not an Ultimate
+      Player account. There is no such thing as an Ultimate Player account.</p>
+      <p>The address can also be a remote one — a reverse-proxy domain such as
+      <code>https://jellyfin.example.com</code>, or a Tailscale name — if you want to reach your server
+      from outside the house.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/jellyfin-form.jpg" alt="The Jellyfin connect form with the display name and server address filled in.">
+      <figcaption>Name and address, ready for your credentials.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">4</span>Connect and scan</h3>
+      <p>With the details filled in, tap <strong>Connect &amp; Scan</strong>. The app signs in, reads
+      your libraries and builds the browsable library, then drops you back on Home. A media server hands
+      over its own artwork, so titles appear with posters straight away.</p>
+      <p>The password is never shown again after you type it, and it is stored encrypted on the
+      device.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/jellyfin-filled.jpg" alt="The connect form completed with username and password, ready to connect.">
+      <figcaption>Ready to connect.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">5</span>Confirm it worked</h3>
+      <p>Back in <strong>Settings</strong>, each connected source gets a live status card: a green
+      <em>Live</em> dot when the server is reachable, and a breakdown of what was found — files, movies,
+      shows and unidentified "others". The circular arrow rescans that source.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/settings.jpg" alt="The Settings tab showing a live status card for the connected Jellyfin server.">
+      <figcaption>696 files · 188 movies · 10 shows.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">6</span>Home is yours now</h3>
+      <p>The demo library retires itself, and Home leads with your own content — what you were watching,
+      what's next, and rows drawn from your server.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/home-jellyfin.jpg" alt="Home screen showing the user's own library with a Continue Watching row.">
+      <figcaption>Home, driven by your own server.</figcaption>
+    </figure>
+  </div>
+
+  <h3>Option B — a network share (SMB, FTP, NFS or WebDAV)</h3>
+
+  <p>A share has no notion of a library, so the app scans the files itself and then identifies them. SMB
+  is shown here; the others use the same form with a different port.</p>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">3</span>Fill in the share details</h3>
+      <p>Choose your NAS under <em>On Your Network</em>, or <strong>Add SMB</strong> under
+      <em>Network Shares</em>. The fields are:</p>
+      <ul>
+        <li><strong>Display name</strong> — optional; what you want to call it in the app.</li>
+        <li><strong>Host / IP</strong> — your NAS or PC address, e.g. <code>192.168.1.20</code>.</li>
+        <li><strong>Port</strong> — 445 for SMB unless your server uses a custom one.</li>
+        <li><strong>Share name</strong> — the shared folder to scan, e.g. <code>Movies</code>.</li>
+        <li><strong>Folder path</strong> — optional; a sub-folder inside the share, to narrow the scan.</li>
+        <li><strong>Username / Password</strong> — leave both empty to connect as a guest.</li>
+        <li><strong>Domain</strong> — only for Windows-domain networks; leave blank otherwise.</li>
+      </ul>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/smb-form.jpg" alt="The Connect a share form for SMB, with host and port pre-filled from discovery.">
+      <figcaption>Host and port pre-filled from discovery.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">4</span>Connect &amp; Scan</h3>
+      <p>The app connects, walks the share and identifies what it finds. The file scan takes seconds;
+      identifying the titles against TMDB then runs in the background, and Home's top bar shows
+      <em>Scanning…</em> while it does. Your files are listed by name straight away and the artwork
+      fills in behind them, so you never wait on a blank screen.</p>
+      <p class="note"><strong>One share per folder.</strong> If your media is split across
+      <code>Movies</code> and <code>TVShows</code>, add each as its own share — repeat this step with
+      the other share name. They appear as separate sources but merge into one library.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/smb-filled.jpg" alt="The SMB form completed with host, share name and credentials.">
+      <figcaption>Completed for a <em>Movies</em> share.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3><span class="num">5</span>Both sources connected</h3>
+      <p>Settings now carries a card per source. A server and a share sit side by side and merge into
+      one library — the app doesn't care where a title came from.</p>
+      <p>Shares from the same host are named after the share itself, so
+      <em>MyCloudEX2Ultra · Movies</em> and <em>MyCloudEX2Ultra · TVShows</em> stay easy to tell
+      apart.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/settings-two.jpg" alt="The Settings tab with two live source cards, a Jellyfin server and an SMB share.">
+      <figcaption>A Jellyfin server and an SMB share, both live.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Managing your sources</h2>
+
+  <div class="step">
+    <div class="body">
+      <p>Tap the <strong>pencil</strong> beside any saved share for its actions:</p>
+      <ul>
+        <li><strong>Edit</strong> — change the address or credentials.</li>
+        <li><strong>Refresh</strong> — look for new files.</li>
+        <li><strong>Re-fetch all metadata</strong> — fetch artwork and details again.</li>
+        <li><strong>Clear metadata</strong> — discard what was fetched and start over.</li>
+        <li><strong>Remove share</strong> — disconnect it and drop its titles from the library.</li>
+      </ul>
+      <p>Removing a source never touches the files on your server or NAS — it only disconnects it
+      here.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/share-menu.jpg" alt="The share actions menu with Edit, Refresh, Re-fetch all metadata, Clear metadata and Remove share.">
+      <figcaption>Per-source actions.</figcaption>
+    </figure>
+  </div>
+
+  <div class="shot-row">
+    <figure class="shot">
+      <img width="600" height="1333" src="images/saved-shares.jpg" alt="Saved Shares listing a Jellyfin server and an SMB share with their addresses and item counts.">
+      <figcaption>Each saved source shows its address and how many items it contributed.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/library.jpg" alt="The Library tab showing a grid of film posters with an A to Z jump rail.">
+      <figcaption><strong>Library</strong> — everything from every source, alphabetically, with a jump
+      rail down the side.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Finding your way around</h2>
+
+  <p>Four tabs sit in the pill at the bottom of the screen: <strong>Home</strong>,
+  <strong>Library</strong>, <strong>Settings</strong> and <strong>Search</strong>.</p>
+
+  <div class="shot-row">
+    <figure class="shot">
+      <img width="600" height="1333" src="images/home.jpg" alt="The Home tab with a Continue Watching hero row and content rows.">
+      <figcaption><strong>Home</strong> — what you were watching, what's next, and rows drawn from your
+      sources.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/search-browse.jpg" alt="The Search tab showing Browse categories.">
+      <figcaption><strong>Search</strong> — type to search, or use Browse to reach playlists, genres,
+      unwatched titles and more.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/search-results.jpg" alt="Live search results for the query alien.">
+      <figcaption>Results update as you type, across every connected source.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3>A film</h3>
+      <p>Tap any poster for its detail page: artwork, runtime, release date, certification, genres,
+      synopsis, ratings from TMDB, IMDb, Rotten Tomatoes and Metacritic, and the cast.</p>
+      <p>The row of buttons under <strong>Play</strong> covers marking watched, downloading for offline,
+      your watchlist, adding to a list, and your own rating. The <strong>⋯</strong> button at the top
+      right holds the rest, including Edit Metadata for anything the app identified wrongly.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/detail-movie.jpg" alt="A film detail page with artwork, ratings and cast.">
+      <figcaption>Film detail, with ratings from four sources.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3>A TV show</h3>
+      <p>A series opens on the episode you are most likely to want next — the one you were part-way
+      through, or the one after the last you finished. The season selector and episode strip run along
+      the bottom; tapping an episode retargets the Play button without leaving the page.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/detail-series.jpg" alt="A TV series detail page with a season selector and episode strip.">
+      <figcaption>Series detail, opened on S1 · E1.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step wide">
+    <div class="body">
+      <h3>The player</h3>
+      <p>Tap once to show or hide the controls. You get a scrubber with the current position and total
+      runtime, skip buttons either side of play/pause, and along the bottom edge: playback settings
+      (subtitles, audio track, speed, quality), casting, and file information. Top left closes the
+      player, switches aspect ratio and starts Picture in Picture; top right locks the screen against
+      stray taps.</p>
+      <p>Two things worth knowing: <strong>tap the time on the right</strong> to switch between total
+      runtime, time remaining, and the clock time the film will finish. And when a title has intro or
+      credits markers, a <strong>Skip</strong> chip appears at the right moment.</p>
+      <p>Playback streams directly from your server or share — nothing is copied to the device unless
+      you explicitly download it. Position is saved continuously, so leaving mid-film and coming back
+      resumes where you were.</p>
+    </div>
+    <figure class="shot">
+      <img width="1000" height="450" src="images/player.jpg" alt="The video player in landscape with on-screen controls over a playing episode.">
+      <figcaption>Playing straight from a Jellyfin server.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step">
+    <div class="body">
+      <h3>Picking up where you left off</h3>
+      <p>Leave a title part-way through and its Play button becomes <strong>Resume</strong> with the
+      exact position. The same title also appears in Continue Watching on Home. With a Jellyfin or Plex
+      server that position is reported back to the server, so it follows you to other devices — and
+      anything you watch elsewhere shows up here.</p>
+    </div>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/detail-resume.jpg" alt="An episode page whose Play button now reads Resume 2:43.">
+      <figcaption>The Play button becomes <em>Resume</em>.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Settings, screen by screen</h2>
+
+  <div class="shot-row">
+    <figure class="shot">
+      <img width="600" height="1333" src="images/playback.jpg" alt="Playback settings — resume, continuous playback, speed, skip lengths and gesture control.">
+      <figcaption><strong>Playback</strong> — resume, auto-play the next episode, speed, skip intros and
+      credits, gesture control, how far the skip buttons jump, and subtitle appearance.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/general.jpg" alt="General settings — appearance, library, downloads and home options.">
+      <figcaption><strong>General</strong> — light/dark appearance, poster titles and filenames, mobile
+      data downloads, and what Home shows.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/metadata.jpg" alt="Metadata and Artwork settings.">
+      <figcaption><strong>Metadata &amp; Artwork</strong> — whether to fetch details at all, prefer
+      artwork already on your server, logos and external ratings, and the artwork cache.</figcaption>
+    </figure>
+  </div>
+
+  <div class="shot-row">
+    <figure class="shot">
+      <img width="600" height="1333" src="images/your-library.jpg" alt="Your Library showing Watchlist and Ratings, Playlists and Collections.">
+      <figcaption><strong>Your Library</strong> — your watchlist, ratings, playlists and collections,
+      all created from a title's action buttons.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/downloads.jpg" alt="The Downloads screen, empty.">
+      <figcaption><strong>Downloads</strong> — titles saved for offline playback, added with the
+      Download button on a title.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img width="600" height="1333" src="images/settings.jpg" alt="The Settings tab with a live source card at the top.">
+      <figcaption><strong>Settings</strong> — live status per source at the top, then everything above.
+      <em>Replay walkthrough</em> and <em>Open Source Licenses</em> sit at the bottom.</figcaption>
+    </figure>
+  </div>
+
+  <p class="note">Turning <strong>Metadata Fetching</strong> off stops the app contacting TMDB and OMDb
+  entirely. Your files are still listed — by filename — and still play; they just won't have posters or
+  synopses.</p>
+
+  <h2 id="tablet">On a tablet</h2>
+
+  <p>Everything above applies, with a layout that uses the extra width. The steps and field names are
+  identical, so follow the phone guide and expect this shape.</p>
+
+  <div class="step wide">
+    <div class="body">
+      <h3>Home and Library</h3>
+      <p>Rows show more per screen and the poster grid goes wider — six across on a large tablet in
+      landscape — with the same A–Z jump rail down the side.</p>
+    </div>
+    <figure class="shot">
+      <img width="1000" height="625" src="images/tablet-library.jpg" alt="The Library tab on a tablet in landscape, showing six columns of posters.">
+      <figcaption>Library on a tablet in landscape.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step wide">
+    <div class="body">
+      <h3>Settings is two panes</h3>
+      <p>On a wide screen Settings splits: the list of sections on the left, the selected section open
+      beside it, so you can move between Playback, General and the rest without going back and
+      forth.</p>
+    </div>
+    <figure class="shot">
+      <img width="1000" height="625" src="images/tablet-settings.jpg" alt="Settings on a tablet showing the section list on the left and Playback open on the right.">
+      <figcaption>Two-pane Settings.</figcaption>
+    </figure>
+  </div>
+
+  <div class="step wide">
+    <div class="body">
+      <h3>Home</h3>
+      <p>The Continue Watching row leads with larger cards, and the Favourites shortcuts and per-source
+      rows sit beneath exactly as they do on a phone.</p>
+    </div>
+    <figure class="shot">
+      <img width="1000" height="625" src="images/tablet-home.jpg" alt="The Home tab on a tablet in landscape.">
+      <figcaption>Home on a tablet.</figcaption>
+    </figure>
+  </div>
+
+  <h2 id="androidtv">On Android TV</h2>
+
+  <p>The same app, installed from the Play Store on an Android TV or Google TV device, switches to a
+  <strong>10-foot interface</strong> built for a remote rather than a touchscreen: a side navigation
+  rail for Home, Library, Search and Settings, large focusable cards that grow as you move across them,
+  and a player driven by the D-pad.</p>
+
+  <p>Setting up a source works the same way — <strong>Settings → Add Files → Add Share</strong>, pick a
+  discovered server or type its address with the on-screen keyboard, then <strong>Connect &amp;
+  Scan</strong>. Because typing a password on a remote is unpleasant, Jellyfin servers can also be
+  signed into with <strong>Quick Connect</strong>: the TV shows a short code, and you approve it from
+  any device already signed in to your Jellyfin.</p>
+
+  <p>Everything else — resume across devices, subtitle download, skip intro, the same library — behaves
+  as described above.</p>
+
+  <h2>If something goes wrong</h2>
+
+  <div class="card">
+    <h3>My server doesn't appear when I scan</h3>
+    <p>Give discovery a few seconds to fill in. Then confirm the phone and the server are on the same
+    network — a phone on mobile data can't see your NAS, and a VPN on either end will usually break
+    discovery. Some networks block the discovery traffic entirely; in that case type the address in by
+    hand under <em>Network Shares</em> or <em>Media Servers</em>, which doesn't depend on discovery.</p>
+  </div>
+
+  <div class="card">
+    <h3>It connects but no videos appear</h3>
+    <p>Check the <strong>share name</strong> is the shared folder itself rather than a path inside it,
+    and that the account you used can read that folder. If the share holds sub-folders, leave
+    <em>Folder path</em> empty so the whole share is scanned. The status card in Settings shows what the
+    scan actually found.</p>
+  </div>
+
+  <div class="card">
+    <h3>Titles show up as "others"</h3>
+    <p>"Others" means the file was found but no provider could identify it. Give metadata fetching a
+    moment to catch up — a large share takes a while — then use <strong>Re-fetch all metadata</strong>
+    on the source. Files identify far more reliably when named <code>Title (Year)</code> for films and
+    <code>Show S01E02</code> for episodes. Anything that stays unidentified is still playable, and you
+    can fix it by hand with <strong>Edit Metadata</strong>.</p>
+  </div>
+
+  <div class="card">
+    <h3>A video won't play, or stalls partway</h3>
+    <p>Ultimate Player bundles extra decoders for audio formats Android often lacks (Dolby AC-3/E-AC-3
+    and DTS), but a few exotic combinations still need transcoding. On a Jellyfin or Plex server, use
+    the <strong>Quality</strong> item in the player's settings to have the server transcode instead of
+    playing the original file. Very high-bitrate 4K files over Wi-Fi can also outrun the connection —
+    lower the quality, move closer to the router, or download the title for offline playback first.</p>
+  </div>
+
+  <div class="card">
+    <h3>Subtitles are missing or out of sync</h3>
+    <p>Subtitles embedded in the file and sidecar <code>.srt</code> files beside it are both picked up
+    automatically. If there are none, open the player's settings button and use <strong>Download
+    subtitles…</strong> to search online. Size, colour and background are in <strong>Settings →
+    Playback → Subtitles</strong>.</p>
+  </div>
+
+  <h2>Getting in touch</h2>
+
+  <p>If none of the above helps, see the <a href="support.html">Support page</a> for how to reach us. It
+  helps enormously to include the app version from <strong>Settings</strong>, the kind of server or
+  share you are connecting to, your Android version and device, and what you expected to happen.</p>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p><a href="support.html">Support</a> · <a href="guide.html">Setup &amp; User Guide</a> ·
+      <a href="../android-privacy.html">Privacy Policy</a> · <a href="../">All platforms</a></p>
+    <p>Ultimate Player is not affiliated with Jellyfin, Plex, TMDB, OMDb, OpenSubtitles or SubDL.</p>
+  </div>
+</footer>
+
+</body>
+</html>
