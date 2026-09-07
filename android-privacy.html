@@ -51,7 +51,7 @@
     <p class="lede">Ultimate Player is a media player for content you already own — files on your
       network shares, local storage, and your own media servers. It is built to keep your data on
       your device.</p>
-    <p class="meta">Last updated: 20 July 2026</p>
+    <p class="meta">Last updated: 7 September 2026</p>
   </header>
 
   <div class="callout">
@@ -83,6 +83,8 @@
       sources, watch/unwatched status, and playback progress, so you can resume where you left off.</li>
     <li><strong>Downloads</strong> — media you choose to download for offline playback, saved in the
       App’s storage.</li>
+    <li><strong>Subtitles you download in the player</strong> — kept on the device so the same
+      subtitle comes back the next time you play that video.</li>
     <li><strong>Preferences</strong> — your in-app settings (theme, playback options, and similar).</li>
   </ul>
   <p>This data is removed when you uninstall the App or clear its storage.</p>
@@ -94,25 +96,70 @@
     is not a party to, and has no access to, these connections.</p>
 
   <h2>5. Third-party services</h2>
-  <p>The App can fetch cover artwork and descriptive metadata (posters, titles, summaries) to make
-    your library look nicer. When these features are used, the App sends the <strong>title text of a
-    movie or show</strong> (not your identity) to the following services and receives images/metadata
-    in return:</p>
+  <p>The App contacts a small number of outside services. None of them receives your name, your
+    account, a device identifier, or the contents of your media — only the search terms needed to
+    answer the request.</p>
+
+  <h3>Artwork, metadata and subtitles</h3>
   <table>
-    <tr><th>Service</th><th>What is sent</th><th>Privacy policy</th></tr>
+    <tr><th>Service</th><th>What is sent</th><th>When</th><th>Privacy policy</th></tr>
     <tr>
       <td>The Movie Database (TMDB)</td>
       <td>Movie/show title queries</td>
-      <td><a href="https://www.themoviedb.org/privacy-policy" rel="noopener">themoviedb.org/privacy-policy</a></td>
+      <td>When artwork and descriptions are fetched for your library</td>
+      <td><a href="https://www.themoviedb.org/privacy-policy" rel="noopener">themoviedb.org</a></td>
     </tr>
     <tr>
       <td>Apple iTunes Search API</td>
       <td>Movie/show title queries</td>
+      <td>As a fallback when TMDB has no match</td>
       <td><a href="https://www.apple.com/legal/privacy/" rel="noopener">apple.com/legal/privacy</a></td>
     </tr>
+    <tr>
+      <td>OMDb API</td>
+      <td>The IMDb id of a title</td>
+      <td>When IMDb, Rotten Tomatoes and Metacritic scores are shown</td>
+      <td><a href="https://www.omdbapi.com/" rel="noopener">omdbapi.com</a></td>
+    </tr>
+    <tr>
+      <td>SubDL</td>
+      <td>A title or IMDb id, plus the subtitle languages you chose</td>
+      <td>Only when you search for subtitles in the player</td>
+      <td><a href="https://subdl.com/" rel="noopener">subdl.com</a></td>
+    </tr>
+    <tr>
+      <td>OpenSubtitles</td>
+      <td>A title or IMDb id, plus the subtitle languages you chose</td>
+      <td>Only when you search for subtitles in the player</td>
+      <td><a href="https://www.opensubtitles.com/privacy" rel="noopener">opensubtitles.com</a></td>
+    </tr>
   </table>
-  <p>These requests contain only the search terms needed to find artwork. They do not include your
-    name, account, device identifiers, or the contents of your media.</p>
+
+  <h3>Connectivity and optional sign-in</h3>
+  <table>
+    <tr><th>Service</th><th>What is sent</th><th>When</th><th>Privacy policy</th></tr>
+    <tr>
+      <td>Plex (plex.tv)</td>
+      <td>A request for a sign-in code and an app client identifier. In return the App receives your
+        Plex account token and the list of your own Plex servers.</td>
+      <td>Only if you choose passwordless sign-in with Plex</td>
+      <td><a href="https://www.plex.tv/about/privacy-legal/" rel="noopener">plex.tv</a></td>
+    </tr>
+    <tr>
+      <td>Cloudflare DNS over HTTPS</td>
+      <td>The hostname being looked up (for example <code>api.themoviedb.org</code>)</td>
+      <td>Only when your own network cannot resolve a host — your system resolver is always tried
+        first, and most people never reach this fallback</td>
+      <td><a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">cloudflare.com</a></td>
+    </tr>
+    <tr>
+      <td>Jellyfin demo server</td>
+      <td>An anonymous sign-in as the shared public <code>demo</code> user — no password, nothing
+        personal</td>
+      <td>Only if you tap “Load a demo library”</td>
+      <td><a href="https://jellyfin.org/" rel="noopener">jellyfin.org</a></td>
+    </tr>
+  </table>
   <p class="meta">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
 
   <h2>6. Permissions the App requests</h2>
@@ -127,9 +174,16 @@
   </table>
 
   <h2>7. Data sharing and selling</h2>
-  <p>We do not sell, rent, or share personal information — because we do not collect any. The only
-    data leaving your device is (a) traffic to media servers you configure, and (b) the artwork title
-    queries described in Section 5.</p>
+  <p>We do not sell, rent, or share personal information — because we do not collect any. Data
+    leaves your device only in these cases:</p>
+  <ul>
+    <li>traffic between your device and the media servers <em>you</em> configure;</li>
+    <li>the title, IMDb id and language queries described in Section 5;</li>
+    <li>if you use it, passwordless sign-in with Plex, which contacts plex.tv on your behalf;</li>
+    <li>a DNS lookup sent to Cloudflare when your own network cannot resolve a hostname.</li>
+  </ul>
+  <p>Apart from the Plex sign-in that you start yourself, none of this carries your name, your
+    account, or a device identifier.</p>
 
   <h2>8. Data security</h2>
   <p>Data the App stores — including media-server credentials — is kept in the App’s private storage
@@ -137,8 +191,10 @@
     keep your device secure. Uninstalling the App or clearing its data removes this information.</p>
 
   <h2>9. Children’s privacy</h2>
-  <p>The App is not directed at children under 13 and does not knowingly collect information from
-    children.</p>
+  <p>The App is not directed at children. On Google Play its target audience is set to
+    <strong>18 and over</strong>, because the App plays whatever media you supply from your own
+    servers and the developer neither controls nor moderates that content. We do not knowingly
+    collect information from children.</p>
 
   <h2>10. Changes to this policy</h2>
   <p>We may update this policy as the App evolves. Material changes will be reflected here with an
