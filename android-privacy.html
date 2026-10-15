@@ -51,7 +51,7 @@
     <p class="lede">Ultimate Player is a media player for content you already own — files on your
       network shares, local storage, and your own media servers. It is built to keep your data on
       your device.</p>
-    <p class="meta">Last updated: 7 September 2026</p>
+    <p class="meta">Last updated: 15 October 2026</p>
   </header>
 
   <div class="callout">
@@ -160,6 +160,24 @@
       <td><a href="https://jellyfin.org/" rel="noopener">jellyfin.org</a></td>
     </tr>
   </table>
+  <h3>Casting to a TV</h3>
+  <table>
+    <tr><th>Service</th><th>What is sent</th><th>When</th><th>Privacy policy</th></tr>
+    <tr>
+      <td>Google Cast SDK (part of Google Play services)</td>
+      <td>Anonymous information about casting: events from finding Cast devices and from casting
+        sessions, information about your phone or tablet, and about the App. Google says it carries no
+        identifier that can be traced back to you, and uses it to see which versions of the SDK are in
+        use and to improve casting. Neither the App nor you can turn it off or delete it. See Google’s
+        <a href="https://developers.google.com/cast/docs/android_sender/data_disclosure" rel="noopener">Cast SDK data disclosure</a>.</td>
+      <td>Only when you open the Cast menu or cast to a Google Cast device</td>
+      <td><a href="https://policies.google.com/privacy" rel="noopener">policies.google.com</a></td>
+    </tr>
+  </table>
+  <p>The video itself never goes to Google or to the developer: while you cast, the App streams it from
+    your device to your TV over your local network. DLNA itself uses no outside service, but the Cast
+    menu always looks for Google Cast devices too, so the SDK above runs whichever kind of TV you
+    pick.</p>
   <p class="meta">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
 
   <h2>6. Permissions the App requests</h2>
@@ -170,7 +188,13 @@
     <tr><td>Internet &amp; network/Wi-Fi state</td>
       <td>To connect to your media servers and to fetch artwork/metadata; to detect network availability.</td></tr>
     <tr><td>Change Wi-Fi multicast state</td>
-      <td>To discover DLNA/UPnP devices (“Cast to TV”) on your local network.</td></tr>
+      <td>To discover TVs — Google Cast and DLNA/UPnP devices (“Cast to TV”) — on your local network.</td></tr>
+    <tr><td>Foreground service (media playback) &amp; keep the device awake</td>
+      <td>While you cast a video, your device streams it to the TV. This keeps casting going with the
+        screen off or the App in the background, and shows the playback controls. It runs only while a
+        cast is active.</td></tr>
+    <tr><td>Notifications</td>
+      <td>To show casting controls and download progress.</td></tr>
   </table>
 
   <h2>7. Data sharing and selling</h2>
@@ -180,7 +204,9 @@
     <li>traffic between your device and the media servers <em>you</em> configure;</li>
     <li>the title, IMDb id and language queries described in Section 5;</li>
     <li>if you use it, passwordless sign-in with Plex, which contacts plex.tv on your behalf;</li>
-    <li>a DNS lookup sent to Cloudflare when your own network cannot resolve a hostname.</li>
+    <li>a DNS lookup sent to Cloudflare when your own network cannot resolve a hostname;</li>
+    <li>if you use the Cast menu, the anonymous casting data the Google Cast SDK sends to Google
+      (Section 5).</li>
   </ul>
   <p>Apart from the Plex sign-in that you start yourself, none of this carries your name, your
     account, or a device identifier.</p>
