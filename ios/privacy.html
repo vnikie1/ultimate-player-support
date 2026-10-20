@@ -25,7 +25,7 @@
 
 <main class="wrap">
 
-  <p class="updated">Last updated: 12 August 2026</p>
+  <p class="updated">Last updated: 20 October 2026</p>
 
   <p class="lede">Ultimate Media Player has no account system, no analytics, no advertising and no
   developer-operated server. Your library, your credentials and your viewing history stay on your device.</p>
@@ -44,7 +44,7 @@
         <tr><td>Track you across other apps or websites?</td><td class="no">No</td></tr>
         <tr><td>Sell or share personal data?</td><td class="no">No</td></tr>
         <tr><td>Store your data on your device only?</td><td class="yes">Yes</td></tr>
-        <tr><td>Contact third-party services for artwork and subtitles?</td><td class="yes">Yes — see below</td></tr>
+        <tr><td>Contact third-party services for artwork, subtitles and trailers?</td><td class="yes">Yes — see below</td></tr>
       </tbody>
     </table>
   </div>
@@ -89,14 +89,25 @@
   <h2>Local network access</h2>
 
   <p>To offer you nearby servers instead of making you type in addresses, the app looks for SMB and FTP
-  services advertised on your local network. iOS asks your permission before this happens, and you can
-  refuse or later withdraw it in <strong>iOS Settings → Ultimate Player → Local Network</strong>. Nothing
-  discovered this way leaves your device. Declining only means you add servers manually.</p>
+  services advertised on your local network, and on iPhone and iPad for TVs it can play on (Chromecast and
+  DLNA TVs). iOS asks your permission before this happens, and you can refuse or later withdraw it in
+  <strong>iOS Settings → Ultimate Player → Local Network</strong>. Nothing discovered this way leaves your
+  device. Declining means the app can't reach servers or TVs on your local network; servers you reach over
+  the internet still work.</p>
+
+  <h3>Play on TV</h3>
+
+  <p>When you choose a TV to play on, the app sends that TV what it needs to play the title: the video's
+  address, its name and artwork, and any subtitles. For a title on a Jellyfin or Plex server, the address
+  includes an access token for that server, because the TV fetches the video from the server itself. For a
+  download, a file on your device or a title on a network share, the TV fetches the video from the app over
+  your local network while it plays. None of this goes to the developer. The TVs the app has found, and any
+  you added by address, are remembered on your device.</p>
 
   <h2>Third-party services the app contacts</h2>
 
-  <p>To show artwork, descriptions, ratings and subtitles, the app queries the following services directly
-  from your device. Each request contains the search terms needed to identify the title — typically a name
+  <p>To show artwork, descriptions, ratings, subtitles and trailers, the app queries the following services
+  directly from your device. Each request contains the search terms needed to identify the title — typically a name
   and year, or a filename — and, as with any internet request, your device's IP address is visible to that
   service. No account identifier is attached, because the app has no accounts.</p>
 
@@ -117,6 +128,17 @@
     <p>Contacted only when you search for or download subtitles. See
       <a href="https://www.opensubtitles.com/en/privacy_policy" rel="noopener">OpenSubtitles' privacy policy</a>
       and <a href="https://subdl.com/" rel="noopener">subdl.com</a>.</p>
+  </div>
+
+  <div class="card">
+    <h3>YouTube</h3>
+    <p>Trailers. TMDB supplies the link to a title's trailer; when you play one, it plays in YouTube's
+      embedded player (on Apple TV, in the YouTube app), which connects your device to YouTube. Nothing is
+      sent to YouTube unless you play a trailer. Ultimate Media Player uses YouTube API Services: by watching
+      a trailer you agree to the <a href="https://www.youtube.com/t/terms" rel="noopener">YouTube Terms of
+      Service</a>. YouTube may show ads in its player and store cookies or similar data on your device, as
+      described in the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy
+      Policy</a>.</p>
   </div>
 
   <p>You can avoid metadata lookups entirely by turning artwork and metadata fetching off in
@@ -179,7 +201,7 @@
 <footer class="site">
   <div class="wrap">
     <p><a href="support.html">Support</a> · <a href="guide.html">Setup &amp; User Guide</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></p>
-    <p>Ultimate Media Player is not affiliated with Jellyfin, Plex, TMDB, OMDb, OpenSubtitles or SubDL.</p>
+    <p>Ultimate Media Player is not affiliated with Jellyfin, Plex, TMDB, OMDb, OpenSubtitles, SubDL, YouTube or Google.</p>
   </div>
 </footer>
 
